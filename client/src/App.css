@@ -1,28 +1,30 @@
+
 .App {
   text-align: center;
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.home__hero {
+  background-image: url('assets/splash.png');
+  height: 50vh;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.home__hero-text {
+  padding: 15px 35px;
+  border-radius: 5px;
+  border: 5px inset solid black;
+  max-width: 95vw;
+  box-shadow: 4px 3px 0 1px black;
+  background: rgba(255,255,255, .9);
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import NavBar from './components/NavBar';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 import './App.css';
+
+import Home from './components/Home';
 
 //----------
 class App extends Component {
@@ -31,16 +39,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          {this.state.response}
-        </p>
+        <Router>
+          <div>
+            <NavBar />
+              <Switch>
+                <Route exactly component={Home} pattern="/" />            
+       
+              </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
 }
 
 export default App;
+
+
+/*                <Route exactly component={Login} pattern="/member/login" />            
+                <Route exactly component={Signup} pattern="/member/signup" />            
+                <Route exactly component={Search} pattern="/app" />     */
