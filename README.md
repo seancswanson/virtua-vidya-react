@@ -12,7 +12,11 @@
    To get started playing **Virtua Vidya**, you may please:
 
    1. fork this repo and clone into it on your system through git.
-   2. ...
+   2. NPM Install from the root folder and inside of client.
+   3. From the root folder run `yarn dev`.
+   4. From the client folder run `npm run watch-css`.
+
+
    
 
 ## Prerequisites
