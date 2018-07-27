@@ -5,8 +5,8 @@ import {
   Route,
   Link,
   Switch
-} from 'react-router-dom'
-import './App.css';
+} from 'react-router-dom';
+import './style/App.css';
 
 import Home from './components/Home';
 
@@ -44,7 +44,7 @@ class App extends Component {
             <NavBar />
               <Switch>
                 <Route exactly component={Home} pattern="/" />            
-       
+
               </Switch>
           </div>
         </Router>
