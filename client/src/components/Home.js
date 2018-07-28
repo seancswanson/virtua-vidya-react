@@ -6,22 +6,21 @@ import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import GameSearchInput from './GameSearchInput';
 
+//----------
 const Home = () => {
 	return(
 		<div className="Home">
-			<div className="home__hero">
+			<div className="home__hero-container">
 				<div className="home__hero-text">
-					<h1>Virtua Shelf</h1>
-					<p>Video Game Collection Visualization</p>
-				</div>
-				<div className="home__search">
-					<form>
-						<input type="text" />
-						<input type="button" value="Go!"/>
-					</form>
+					<h1>Virtua</h1>
+					<h1>Shelf</h1>
+					<p>Video Games & Visualizations</p>
+					<img src="assets/controller.png"/>
 				</div>
 			</div>
+			<GameSearchInput />
 		</div>
 	)
 };

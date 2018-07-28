@@ -1,4 +1,4 @@
-.home__hero {
+.home__hero-container {
   background-image: url("../assets/splash.png");
   height: 50vh;
   background-position: left;
@@ -11,7 +11,7 @@
   padding: 15px 35px;
   border-radius: 5px;
   border: 5px inset solid black;
-  box-shadow: 4px 4px 0 1px black;
+  box-shadow: 4px 4px 0 0 black;
   background: rgba(255, 255, 255, 0.95);
   color: black;
   text-align: center;
@@ -21,9 +21,49 @@
   transform: translate(-50%, -50%);
   transition: all .5s ease; }
   .home__hero-text h1 {
+    display: inline-block;
     font-family: 'virtua';
     text-transform: uppercase;
-    line-height: 50px; }
+    margin-bottom: 5px; }
+  .home__hero-text p {
+    margin: 40px 0; }
+
+.home__hero-search {
+  padding-top: 30px;
+  padding-bottom: 5px;
+  width: 100vw; }
+
+.home__hero-search-input {
+  margin: 0;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 1.2px;
+  border-bottom: 1px solid black;
+  padding: 3px 10px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  text-align: center; }
+
+.home__hero-search-button {
+  margin: 0;
+  border: 0;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 5px 15px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  box-shadow: 3px 3px 0 0 black;
+  position: relative;
+  top: -5px;
+  cursor: pointer; }
+  .home__hero-search-button:hover {
+    box-shadow: 2px 2px 0 0 black; }
 
 @media only screen and (max-width: 600px) {
   .home__hero-text {
