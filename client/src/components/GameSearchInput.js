@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 
 //----------
-const GameSearchInput = () => {
+
+
+//----------
+const GameSearchInput = (props) => {
 	return(
 		<div className="GameSearchInput">
-			<form className="home__hero-search">
-				<input className="home__hero-search-input" type="text" placeholder="Search"/>
-				<input className="home__hero-search-button" type="button" value="Go!"/>
+			<form className="home__hero-search" onSubmit={props.handleSearch}>
+				<input className="home__hero-search-input" type="text" placeholder="Search" onChange={props.handleQuery}/>
+				<input className="home__hero-search-button" type="submit" value="Go!"/>
 			</form>
 		</div>
 	)
