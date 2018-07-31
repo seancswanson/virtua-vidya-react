@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import GameSearchInput from './GameSearchInput';
-
-
+import SearchResults from './SearchResults';
 
 //----------
 class Home extends Component {
-  constructor(props) {
+	  constructor(props) {
     super(props);
   }
 
-	state = {
-	    apiResponse: {},
+  state = {
+	    apiResponse: [],
       searchValue: ''
 	}
 
@@ -35,6 +27,8 @@ class Home extends Component {
             apiResponse: result
           });
         });
+
+    this.apiResponse = Object.keys(this.state.apiResponse) || {};
   }
 
   //----------
@@ -43,6 +37,7 @@ class Home extends Component {
       searchValue: event.target.value
     });
   }
+
 
 	render() {
 		return(
@@ -55,6 +50,7 @@ class Home extends Component {
 					</div>
 				</div>
 				<GameSearchInput handleQuery={this.handleSearchValueChange} handleSearch={this.handleSearchSubmit} />
+        <SearchResults apiResponse={this.state.apiResponse}/>
 			</div>
 		)
 	};
