@@ -55,15 +55,16 @@ app.get("/api/getVideoGameData", function(req, res) {
   client
     .games({
       search: req.query.query, // Sends search query
-      fields: "name",
+      fields: ["name", "cover"],
       limit: 25, // Limit to 5 results
       offset: 0 // Index offset for results
     })
     .then(response => {
       console.log(response.body);
       res.send(response.body);
-    })
+    }, err => console.log(err))
     .catch(error => {
+      console.log('catch', error);
       throw error;
     });
 });

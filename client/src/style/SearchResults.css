@@ -1,0 +1,6 @@
+.card {
+  display: inline-block;
+  margin: 10px; }
+
+.card-cover {
+  max-height: 50px; }

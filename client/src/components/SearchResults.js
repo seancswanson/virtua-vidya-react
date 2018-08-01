@@ -5,19 +5,16 @@ class SearchResults extends Component {
 
 	//----------
 	render() {
-		if (this.props.apiResponse) {
+		if (this.props.apiResponse.length) {
 			const data = this.props.apiResponse;
-			console.log(data);
+			console.log('data', data);
 			const items = data.map((item, i) => {
 				console.log(item);
-					return <div key={i}>{item.name}</div>;
+					return <div className="card" key={i}><img className="card-cover" src={item.cover ? item.cover.url : 'https://upload.wikimedia.org/wikipedia/it/3/39/Sad_mac.jpg'} /><p>{item.name}</p></div>;
 				})
 
-			return(
-				<div>
-				{items}
-				</div>
-			)
+			return items;
+			
 		} else {
 			return null;
 		}

@@ -10,6 +10,7 @@ class Home extends Component {
 
   state = {
 	    apiResponse: [],
+      isLoading: false,
       searchValue: ''
 	}
 
@@ -18,17 +19,19 @@ class Home extends Component {
 
     console.log('Search click.', this.state.searchValue);
     event.preventDefault();
+        this.setState({ isLoading: true })
 
     fetch(`/api/getVideoGameData?query=${this.state.searchValue}`, {method: 'get'})
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
-            apiResponse: result
+            apiResponse: result,
+            isLoading: false
           });
+        }).catch(function() {
+          console.log('error');
         });
-
-    this.apiResponse = Object.keys(this.state.apiResponse) || {};
   }
 
   //----------
@@ -50,7 +53,8 @@ class Home extends Component {
 					</div>
 				</div>
 				<GameSearchInput handleQuery={this.handleSearchValueChange} handleSearch={this.handleSearchSubmit} />
-        <SearchResults apiResponse={this.state.apiResponse}/>
+        <SearchResults apiResponse={this.state.apiResponse} />
+        {this.state.isLoading ? <div className="loader"><div className="spinner"></div><p>Loading...</p></div> : ''}
 			</div>
 		)
 	};
